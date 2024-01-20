@@ -1,7 +1,7 @@
 document.getElementById('trackingForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
- const trackingCode = "your_tracking_code_here";
+ const trackingCode = "12345";
 
 function validateTrackingCode(code) {
   if (code === trackingCode) {
