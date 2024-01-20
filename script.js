@@ -1,11 +1,11 @@
 var clickCount = 0;
 var validCodes = ['1234', '5678', '9012']; // Add your valid codes here
 
-document.getElementById('trackingForm').addEventListener('submit', function(event) {
+document.getElementById("trackingForm").addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting
 
-    var trackingCode = document.getElementById('trackingCode').value;
-    var deliveryStatus = document.getElementById('deliveryStatus');
+    var trackingCode = document.getElementById("trackingCode").value;
+    var deliveryStatus = document.getElementById("deliveryStatus");
 
     if (validCodes.includes(trackingCode)) {
         clickCount++;
@@ -14,9 +14,9 @@ document.getElementById('trackingForm').addEventListener('submit', function(even
         } else {
             deliveryStatus.textContent = 'Valid tracking code. Delivery status: Delivered.';
         }
-        deliveryStatus.classList.remove('hidden');
+        deliveryStatus.classList.remove("hidden");
     } else {
         deliveryStatus.textContent = 'Invalid tracking code.';
-        deliveryStatus.classList.remove('hidden');
+        deliveryStatus.classList.remove("hidden");
     }
 });
