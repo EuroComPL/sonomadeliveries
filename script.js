@@ -12,4 +12,3 @@ document.getElementById('trackingForm').addEventListener('submit', function(even
         deliveryStatus.classList.remove('hidden');
     }
 });
-
