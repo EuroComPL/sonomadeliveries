@@ -2,16 +2,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Modak', cursive;
-    background-color: #f0f0f0;
+    background-image: url('https://raw.githubusercontent.com/EuroComPL/sonomadeliveries/main/home-1788869.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    color: #fff; /* Adjust text color to be visible on the background */
 }
 
 .coming-soon-container {
     text-align: center;
-    color: #333;
 }
 
 .coming-soon-title {
@@ -43,7 +45,6 @@ body {
 
 .social-icons a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-size: 1.5em;
 }
-
