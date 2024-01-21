@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Admin Page Enter Password to continue.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form>
-    <label for="password">Enter Password:</label>
-    <input type="password" id="password">
-    <button type="button" onclick="checkPassword()">Enter Site</button>
-  </form>
-  <script>
-    function checkPassword() {
-      const password = document.getElementById("password").value;
-      if (password === "SonomaDeliverys14687614@&1@") {
-        window.location.href = "https://eurocompl.github.io/sonomadeliverys/Working_Project/Secured_Project_file_mainpage.html";
-      } else {
-        alert("Incorrect password. Please try again.");
-      }
-    }
-  </script>
+    <div class="container">
+        <h2>Delivery Tracker</h2>
+        <form id="trackingForm">
+            <label for="trackingCode">Tracking Code:</label>
+            <input type="text" id="trackingCode" name="trackingCode" required>
+
+            <button type="submit">Track Delivery</button>
+        </form>
+
+        <!-- Display delivery status here -->
+        <div id="deliveryStatus" class="hidden">
+            <!-- Status message will be displayed here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
