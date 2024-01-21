@@ -1,1 +1,23 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Page Enter Password to continue.</title>
+</head>
+<body>
+  <form>
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password">
+    <button type="button" onclick="checkPassword()">Enter Site</button>
+  </form>
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      if (password === "SonomaDeliverys14687614@&1@") {
+        window.location.href = "https://www.example.com";
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
