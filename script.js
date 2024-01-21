@@ -1,22 +1,22 @@
-var clickCount = 0;
-var validCodes = ['SONOMADELIVERYCODESYSTEMTEST', '', '']; // Add your valid codes here
+// Set the date we're counting down to (replace with your launch date)
+const launchDate = new Date("January 31, 2024 12:30:00").getTime();
 
-document.getElementById("trackingForm").addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting
+// Update the countdown every 1 second
+const countdownInterval = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = launchDate - now;
 
-    var trackingCode = document.getElementById("trackingCode").value;
-    var deliveryStatus = document.getElementById("deliveryStatus");
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (validCodes.includes(trackingCode)) {
-        clickCount++;
-        if (clickCount < 5) {
-            deliveryStatus.textContent = 'Delivery status: In transit.';
-        } else {
-            deliveryStatus.textContent = 'Delivery status: Delivered.';
-        }
-        deliveryStatus.classList.remove("hidden");
-    } else {
-        deliveryStatus.textContent = 'Invalid tracking code.';
-        deliveryStatus.classList.remove("hidden");
+    // Display the countdown
+    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // If the countdown is over, display a message
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "We're live now!";
     }
-});
+}, 1000);
